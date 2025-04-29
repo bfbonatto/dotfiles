@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: alphabet
+# key: abc
+# condition: t
+# --
+abcdefghijklmnopqrstuvwxyz

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: with-cancel-cause
+# key: cwcc
+# condition: t
+# --
+ctx, cancel := context.WithCancelCause(${1:context.Background()})
+${2:defer cancel(nil)}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: one-up
+# key: 1..
+# condition: t
+# --
+123456789

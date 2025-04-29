@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: panicf
+# key: pef
+# condition: t
+# --
+panic(fmt.Sprintf("$1", $2))

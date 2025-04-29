@@ -1,0 +1,36 @@
+run:
+  tests: false
+linters:
+  enable:
+    - errcheck
+    - gosimple
+    - ineffassign
+    - staticcheck
+    - unused
+    - asciicheck
+    - bodyclose
+    - errname
+    - errorlint
+    - exhaustive
+    - exportloopref
+    - goconst
+    - godot
+    - gosec
+    - nestif
+    - prealloc
+    - predeclared
+    - unconvert
+    - unparam
+  disable:
+    - revive
+    - govet
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+  # govet:
+  #   check-shadowing: false
+  gosec:
+    excludes:
+      - G107
+  exhaustive:
+    default-signifies-exhaustive: true

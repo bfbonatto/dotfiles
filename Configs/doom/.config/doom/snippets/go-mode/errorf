@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: errorf
+# key: fef
+# condition: t
+# --
+fmt.Errorf("$1", $2)

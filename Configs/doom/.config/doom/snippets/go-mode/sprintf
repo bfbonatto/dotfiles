@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sprintf
+# key: spf
+# condition: t
+# --
+fmt.Sprintf(${1:format string}, ${2:a ...any})

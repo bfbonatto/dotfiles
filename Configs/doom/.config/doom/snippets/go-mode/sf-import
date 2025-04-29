@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sf-import
+# key: sfi
+# condition: t
+# --
+$2 "git.simkorp.com.br/repositorio/simkorp/$1"

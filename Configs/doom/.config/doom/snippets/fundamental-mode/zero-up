@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: zero-up
+# key: 0..
+# condition: t
+# --
+0123456789

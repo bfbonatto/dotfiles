@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: jenkins-replace
+# key: sfp
+# condition: t
+# --
+sh 'go mod edit -replace=git.simkorp.com.br/repositorio/simkorp/$1=\${BUILD_PATH}/\${BUILD_ENV}-$1'
+script {
+    if (!fileExists("\${env.BUILD_PATH}/\${env.BUILD_ENV}-$1/go.mod")) {
+        build "\${env.BUILD_ENV}-$1"
+    }
+}

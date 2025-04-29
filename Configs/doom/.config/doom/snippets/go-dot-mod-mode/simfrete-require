@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: simfrete require
+# uuid: mod-sf-require
+# key: sfr
+# condition: t
+# --
+require git.simkorp.com.br/repositorio/simkorp/$1

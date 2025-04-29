@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: simfrete-replace
+# uuid: mod-sf-replace
+# key: sfp
+# condition: t
+# --
+replace git.simkorp.com.br/repositorio/simkorp/$1 => ../$1

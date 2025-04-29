@@ -1,0 +1,13 @@
+[tools]
+python = "latest"
+uv = "latest"
+go = "1.23"
+node = "latest"
+shellcheck = "latest"
+"aqua:astral-sh/ruff" = "latest"
+
+
+[settings]
+experimental = true
+color = false
+idiomatic_version_file_enable_tools = []

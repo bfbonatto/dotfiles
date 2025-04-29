@@ -1,0 +1,47 @@
+version: "2"
+run:
+  tests: false
+linters:
+  enable:
+    - asciicheck
+    - bodyclose
+    - errname
+    - errorlint
+    - exhaustive
+    - goconst
+    - godot
+    - gosec
+    - nestif
+    - prealloc
+    - predeclared
+    - unconvert
+    - unparam
+  disable:
+    - govet
+    - revive
+  settings:
+    errcheck:
+      check-type-assertions: true
+    exhaustive:
+      default-signifies-exhaustive: true
+    gosec:
+      excludes:
+        - G107
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

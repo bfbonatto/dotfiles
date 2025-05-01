@@ -4,8 +4,11 @@ require('maps')
 require "paq" {
 	"savq/paq-nvim";
 	"neovim/nvim-lspconfig";
+	"ms-jpq/coq_nvim";
+	"ms-jpq/coq.artifacts";
+	"ms-jpq/coq.thirdparty";
 	"tpope/vim-surround";
-    "tpope/vim-fugitive";
+	"tpope/vim-fugitive";
 	"scrooloose/nerdtree";
 	"vim-airline/vim-airline";
 	"vim-airline/vim-airline-themes";
@@ -14,9 +17,9 @@ require "paq" {
 	"rafcamlet/nvim-luapad";
 	'jiangmiao/auto-pairs';
 	'luochen1990/rainbow';
-    'junegunn/fzf';
-    'airblade/vim-gitgutter';
-    'scrooloose/nerdcommenter';
+	'junegunn/fzf';
+	'airblade/vim-gitgutter';
+	'scrooloose/nerdcommenter';
 }
 
 vim.cmd("colorscheme jellybeans")

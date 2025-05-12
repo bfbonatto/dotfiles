@@ -117,6 +117,9 @@
   (lsp-flycheck-add-mode 'python-mode)
   (flycheck-add-next-checker 'lsp 'ruff))
 
+(after! (:and python lsp-pyright)
+  (setq! lsp-pyright-multi-root nil))
+
 (after! json-mode
   (add-hook! json-mode
              '(prettify-symbols-mode rainbow-delimiters-mode-enable)))

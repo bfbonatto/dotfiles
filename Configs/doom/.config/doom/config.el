@@ -101,7 +101,8 @@
   (setq! dap-python-debugger 'debugpy)
   (add-hook! python-mode
              '(prettify-symbols-mode rainbow-delimiters-mode-enable)
-             #'uv-mode-auto-activate-hook)
+             ;; #'uv-mode-auto-activate-hook
+             )
   (setq python-shell-completion-native-enable nil))
 
 (after! (:and python python-pytest)

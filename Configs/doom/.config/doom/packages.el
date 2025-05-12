@@ -5,7 +5,7 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
-(package! uv-mode)
+;; (package! uv-mode)
 (package! request)
 (package! mermaid-mode)
 (package! ob-mermaid)

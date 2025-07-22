@@ -13,6 +13,7 @@
 (package! ox-ioslide)
 (package! rfc-mode)
 (package! jq-mode)
+(package! rainbow-delimiters)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
@@ -29,6 +30,11 @@
 ;; (package! this-package
 ;;   :recipe (:host github :repo "username/repo"
 ;;            :files ("some-file.el" "src/lisp/*.el")))
+
+;; (package! lean4-mode
+;;   :recipe (:host github
+;;            :repo "leanprover-community/lean4-mode"
+;;            :files ("*.el" "data")))
 
 ;; If you'd like to disable a package included with Doom, you can do so here
 ;; with the `:disable' property:

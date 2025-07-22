@@ -51,7 +51,7 @@ options = {
     guifont = "FiraCode NF:h10",
 }
 
-vim.lsp.enable('basedpyright')
+--vim.lsp.enable('basedpyright')
 vim.g.coq_settings = {
 	auto_start = 'shut-up',
 }

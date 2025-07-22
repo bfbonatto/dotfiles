@@ -28,7 +28,9 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 (setq doom-font (font-spec :family "FiraCode Nerd Font"
-                           :size 12 :weight 'normal))
+                           :size 12 :weight 'normal)
+      doom-symbol-font (font-spec :family "Fira Code Symbol"
+                                  :size 12 :weight 'normal))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -73,7 +75,7 @@
 
 (global-display-fill-column-indicator-mode)
 
-(add-hook! '(prog-mode-hook json-mode-hook yaml-mode-hook sql-mode-hook) #'highlight-indent-guides-mode)
+(add-hook! '(prog-mode-hook json-mode-hook yaml-mode-hook sql-mode-hook) '(highlight-indent-guides-mode rainbow-delimiters-mode-enable))
 
 (after! highlight-indent-guides
   (setq! highlight-indent-guides-method 'character
@@ -100,9 +102,10 @@
 (after! python
   (setq! dap-python-debugger 'debugpy)
   (add-hook! python-mode
-             '(prettify-symbols-mode rainbow-delimiters-mode-enable)
+             #'prettify-symbols-mode
              #'uv-mode-auto-activate-hook)
-  (setq python-shell-completion-native-enable nil))
+  (setq python-shell-completion-native-enable nil)
+  (setq lsp-pyright-langserver-command "basedpyright"))
 
 (after! (:and python python-pytest)
   (setq! python-pytest-executable "uv run pytest")
@@ -119,7 +122,11 @@
 
 (after! json-mode
   (add-hook! json-mode
-             '(prettify-symbols-mode rainbow-delimiters-mode-enable)))
+             #'prettify-symbols-mode))
+
+(after! scala-mode
+  (add-hook! scala-mode
+             #'prettify-symbols-mode))
 
 (after! go-mode
   (map! :mode (go-mode godoc-mode)
@@ -129,12 +136,11 @@
   (setq! gorepl-command "gomacro")
   (set-repl-handler! 'go-mode #'gomacro-run)
   (set-formatter! 'golines '("golines" "-m" "79"))
-  (set-formatter! 'swaggo '("swag" "f" "-pipe"))
   (add-hook! go-mode
-             '(prettify-symbols-mode rainbow-delimiters-mode-enable)))
+             #'prettify-symbols-mode))
 
 (after! (:and go-mode apheleia)
-  (setf (alist-get 'go-mode apheleia-mode-alist) '(golines swaggo)))
+  (setf (alist-get 'go-mode apheleia-mode-alist) '(golines)))
 
 (defconst gorepl-version "1.0.0")
 (defconst gorepl-buffer "*Go REPL*")
@@ -166,8 +172,16 @@
 (after! corfu
   (setq corfu-preselect 'first))
 
+(after! coq
+  (setq! company-box-doc-enable nil)
+  (setq! coq-compile-before-require t))
+
 (setq! eshell-history-size 2048)
 
+(plist-put! +ligatures-extra-symbols
+            :str nil
+            :true nil
+            :false nil)
 
 (setq shr-inhibit-images t
       shr-use-fonts nil)
